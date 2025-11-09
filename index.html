@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Officina Restô Bar — Delivery • Reservas • Cardápio</title>
+  <meta name="description" content="Officina Restô Bar — rustic-modern bar em Curitiba. Reserve, peça online, veja o cardápio e faça pedidos pelo WhatsApp.">
+  <link rel="icon" href="data:,"><style>
+    /* Reset + base */
+    :root{--accent:#b33f2e;--dark:#111827;--muted:#6b7280;--glass:rgba(255,255,255,0.06)}
+    *{box-sizing:border-box}html,body{height:100%}body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;line-height:1.5;margin:0;color:var(--dark);background:linear-gradient(180deg,#fff 0%,#f7f7f9 100%)}
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    .container{max-width:1100px;margin:0 auto;padding:22px}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{font-weight:800;font-size:20px;letter-spacing:0.6px;color:var(--accent)}
+    nav{display:flex;gap:12px}
+    .btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;font-weight:600}
+    .ghost{background:transparent;border:1px solid #eee;padding:10px 12px;border-radius:10px}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:center;margin:18px 0}
+    .hero-card{background:#fff;padding:22px;border-radius:16px;box-shadow:0 8px 30px rgba(11,12,15,0.06)}
+    .rating{font-weight:700;color:#111}
+    .small{color:var(--muted);font-size:14px}
+
+    /* Quick actions */
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
+
+    /* Menu & Products */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+    .card{background:#fff;padding:12px;border-radius:12px;overflow:hidden}
+    .card h4{margin:8px 0}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:18px}
+
+    /* Footer */
+    footer{margin-top:28px;padding:18px 0;color:var(--muted);font-size:14px}
+
+    /* Responsive */
+    @media (max-width:980px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.gallery{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:520px){.grid{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}.container{padding:14px}.logo{font-size:18px}}
+
+    /* Floating WhatsApp */
+    .wa{position:fixed;right:18px;bottom:18px;background:#25D366;border-radius:50%;width:60px;height:60px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(37,211,102,0.18);z-index:999}
+    .wa a{color:white;font-weight:700}
+
+    /* Simple form styles */
+    .form-row{display:flex;gap:8px}
+    .input,textarea,select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e7eb}
+    textarea{min-height:100px}
+
+    /* map */
+    .map{border-radius:12px;overflow:hidden}
+  </style>
+</head>
+<body>
+  <header class="container">
+    <div class="brand">
+      <div class="logo">Officina Restô Bar</div>
+      <div class="small">Rustic · Drinks · Snacks</div>
+    </div>
+    <nav>
+      <a class="ghost" href="#cardapio">Cardápio</a>
+      <a class="ghost" href="#reserva">Reserva</a>
+      <a class="ghost" href="#contato">Contato</a>
+      <a class="btn" href="#pedir">Pedir</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <h1 style="margin:0;font-size:28px">Officina Restô Bar</h1>
+        <p class="small" style="margin:6px 0 12px">Alameda Dr. Carlos de Carvalho, 1154 - Centro, Curitiba - PR</p>
+        <div style="display:flex;align-items:center;gap:12px">
+          <div style="background:var(--glass);padding:8px 12px;border-radius:10px"><strong class="rating">4.7</strong><div class="small">(1.149)</div></div>
+          <div class="small">Dine-in · Takeaway · Delivery</div>
+        </div>
+
+        <div class="actions">
+          <a class="btn" href="#pedir" title="Pedir agora">Pedir (WhatsApp)</a>
+          <a class="ghost" href="#reserva" title="Reservar">Reserve sua mesa</a>
+          <a class="ghost" href="https://linktr.ee/officinarestobar" target="_blank">Linktree</a>
+          <a class="ghost" href="https://drive.google.com/file/d/1jpHhtH2cewQOOw-xe6fF7wlWNsWlFIJ_/view" target="_blank">Menu Presencial (PDF)</a>
+        </div>
+
+        <p class="small" style="margin-top:12px">Horário: Abre 19:00 · Fecha 00:30</p>
+
+        <section id="pedir" style="margin-top:16px">
+          <h3 style="margin:6px 0">Peça pelo WhatsApp</h3>
+          <p class="small">Clique no botão e envie seu pedido pronto para enviar ao número oficial.</p>
+          <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">
+            <!-- prefilled WA message with menu choices -->
+            <a class="btn" href="https://wa.me/5541991122031?text=Ol%C3%A1%2C+gostaria+de+fazer+um+pedido+no+Officina+Rest%C3%B4+Bar.%0A1.%20%5Bnome%5D%0A2.%20%5Bpedido%5D%0A3.%20%5Bendere%C3%A7o%20ou%20retirada%5D" target="_blank">WhatsApp: (41) 99112-2031</a>
+            <a class="ghost" href="#contato">Enviar e-mail</a>
+          </div>
+        </section>
+
+      </div>
+
+      <aside>
+        <div class="card">
+          <img src="frente.jpg" alt="Frente do estabelecimento">
+        </div>
+        <div style="margin-top:10px" class="card">
+          <div style="display:flex;gap:8px;align-items:center">
+            <div>
+              <strong>Contato</strong>
+              <div class="small">(41) 99112-2031</div>
+              <div class="small">HP77+VJ Centro, Curitiba - PR</div>
+            </div>
+          </div>
+          <div style="margin-top:10px">
+            <a class="btn" href="#reserva">Reservar</a>
+            <a class="ghost" style="margin-left:8px" href="https://www.google.com/maps/place/Officina+Rest%C3%B4+Bar/@-25.440995,-49.4348703,12z/data=!4m10!1m2!2m1!1sRestaurants!3m6!1s0x94dce3f53234afdf:0x7bb69f272bb3bc5d!8m2!3d-25.4352732!4d-49.2859457" target="_blank">Como chegar</a>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Cardápio simplificado -->
+    <section id="cardapio">
+      <h2>Cardápio — Destaques</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="produto1.jpg" alt="Produto 1">
+          <h4>Prato/Drink 1</h4>
+          <div class="small">Descrição curta e apetitosa.</div>
+          <div style="margin-top:8px;display:flex;gap:8px">
+            <a class="btn" href="https://wa.me/5541991122031?text=Quero+o+Produto+1" target="_blank">Pedir</a>
+            <a class="ghost" href="#">Ver mais</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="produto2.jpg" alt="Produto 2">
+          <h4>Prato/Drink 2</h4>
+          <div class="small">Sabor clássico da casa.</div>
+          <div style="margin-top:8px;display:flex;gap:8px">
+            <a class="btn" href="https://wa.me/5541991122031?text=Quero+o+Produto+2" target="_blank">Pedir</a>
+            <a class="ghost" href="#">Ver mais</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="produto3.jpg" alt="Produto 3">
+          <h4>Prato/Drink 3</h4>
+          <div class="small">Escolha perfeita para compartilhar.</div>
+          <div style="margin-top:8px;display:flex;gap:8px">
+            <a class="btn" href="https://wa.me/5541991122031?text=Quero+o+Produto+3" target="_blank">Pedir</a>
+            <a class="ghost" href="#">Ver mais</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section style="margin-top:18px">
+      <h2>Galeria</h2>
+      <div class="gallery">
+        <div class="card"><img src="ambiente.jpg" alt="Ambiente"></div>
+        <div class="card"><img src="frente.jpg" alt="Frente"></div>
+        <div class="card"><img src="produto1.jpg" alt="Produto"></div>
+      </div>
+    </section>
+
+    <!-- Reserva -->
+    <section id="reserva" style="margin-top:18px">
+      <h2>Reserve sua mesa</h2>
+      <p class="small">Preencha e envie — ou clique para enviar por WhatsApp.</p>
+      <form onsubmit="event.preventDefault(); reserve()" style="display:grid;gap:10px;max-width:720px;margin-top:8px">
+        <div class="form-row">
+          <input class="input" id="nome" placeholder="Seu nome" required>
+          <input class="input" id="pax" placeholder="Pessoas (ex: 2)" required>
+        </div>
+        <div class="form-row">
+          <input class="input" id="data" type="datetime-local" required>
+          <input class="input" id="tel" placeholder="Telefone (WhatsApp)" required>
+        </div>
+        <textarea id="obs" placeholder="Observações (ex: aniversariante)"></textarea>
+        <div style="display:flex;gap:8px">
+          <button class="btn" type="submit">Enviar reserva (WhatsApp)</button>
+          <a class="ghost" href="mailto:officinarestobar@example.com?subject=Reserva&body=Quero+reservar" target="_blank">Enviar por email</a>
+        </div>
+      </form>
+    </section>
+
+    <!-- Map & Contact -->
+    <section id="contato" style="margin-top:18px;display:grid;grid-template-columns:1fr 380px;gap:18px;align-items:start">
+      <div>
+        <h3>Localização</h3>
+        <div class="map">
+          <iframe width="100%" height="280" frameborder="0" style="border:0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.123456789!2d-49.287!3d-25.4352732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDI1JzI3LjAiUyA0OcKwMTcnMjUuMCJX!5e0!3m2!1spt-BR!2sbr!4v1690000000000" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <p class="small" style="margin-top:8px">Alameda Dr. Carlos de Carvalho, 1154 - Centro, Curitiba - PR · (41) 99112-2031</p>
+        <p class="small">Siga: <a href="https://linktr.ee/officinarestobar" target="_blank">@officinarestobar</a></p>
+      </div>
+
+      <div>
+        <h3>Contato rápido</h3>
+        <form onsubmit="event.preventDefault(); contactSend()" style="display:grid;gap:8px">
+          <input id="cname" class="input" placeholder="Seu nome" required>
+          <input id="cemail" class="input" placeholder="Email" type="email">
+          <textarea id="cmsg" placeholder="Mensagem" required></textarea>
+          <div style="display:flex;gap:8px">
+            <button class="btn" type="submit">Enviar (WhatsApp)</button>
+            <a class="ghost" href="mailto:officinarestobar@example.com">Enviar por email</a>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div class="small">© Officina Restô Bar — Criado com ❤️. Endereço completo e links já preenchidos.</div>
+    </footer>
+  </main>
+
+  <!-- Floating WhatsApp -->
+  <div class="wa">
+    <a href="https://wa.me/5541991122031?text=Ol%C3%A1%2C+gostaria+de+informacoes" target="_blank">WA</a>
+  </div>
+
+  <script>
+    function reserve(){
+      const nome=document.getElementById('nome').value||'Cliente';
+      const pax=document.getElementById('pax').value||'';
+      const data=document.getElementById('data').value||'';
+      const tel=document.getElementById('tel').value||'';
+      const obs=document.getElementById('obs').value||'';
+      const msg = `Reserva%20-%20Officina%20Rest%C3%B4%20Bar%0AName:%20${encodeURIComponent(nome)}%0APax:%20${encodeURIComponent(pax)}%0AData:%20${encodeURIComponent(data)}%0ATel:%20${encodeURIComponent(tel)}%0AObs:%20${encodeURIComponent(obs)}`;
+      window.open('https://wa.me/5541991122031?text='+msg,'_blank');
+    }
+    function contactSend(){
+      const name=document.getElementById('cname').value||'Cliente';
+      const email=document.getElementById('cemail').value||'';
+      const msg=document.getElementById('cmsg').value||'';
+      const full=`Contato%20-%20${encodeURIComponent(name)}%20${encodeURIComponent(email)}%0A%0A${encodeURIComponent(msg)}`;
+      window.open('https://wa.me/5541991122031?text='+full,'_blank');
+    }
+  </script>
+</body>
+</html>
